@@ -1,6 +1,6 @@
 'use client'
 
-import { Image } from "@/app/types/page"
+import { Image } from "@/app/types"
 import { Card } from "@/components/ui/card"
 import {
   Tabs,

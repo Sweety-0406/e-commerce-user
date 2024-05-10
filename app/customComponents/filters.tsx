@@ -26,7 +26,7 @@ import {
     FormLabel,
     FormMessage,
   } from "@/components/ui/form"
-import { Color, Product as productType, Size } from "../types/page"
+import { Color, Product as productType, Size } from "../types"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"

@@ -1,5 +1,5 @@
 'use client'
-import { Product,Comment } from "@/app/types/page"
+import { Product,Comment } from "@/app/types"
 import { Separator } from "@/components/ui/separator"
 import { IndianRupee } from "lucide-react"
 import Gallery from "./Gallery"

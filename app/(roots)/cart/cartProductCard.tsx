@@ -1,7 +1,7 @@
 'use client'
 
 import useCartStore from "@/app/hooks/useCart";
-import { Product } from "@/app/types/page"
+import { Product } from "@/app/types"
 import { Button } from "@/components/ui/button";
 import { IndianRupee } from "lucide-react"
 import { useRouter } from "next/navigation";

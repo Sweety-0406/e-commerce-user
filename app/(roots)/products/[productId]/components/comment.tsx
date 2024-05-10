@@ -4,7 +4,7 @@ import axios from "axios"
 import { redirect, useRouter } from "next/navigation"
 import {  set, useForm } from "react-hook-form"
 import toast from "react-hot-toast"
-import { Comment } from "@/app/types/page"
+import { Comment } from "@/app/types"
 import { Button } from "@/components/ui/button"
 import { TbSend2 } from "react-icons/tb";
 import {

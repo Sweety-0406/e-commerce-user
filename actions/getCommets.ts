@@ -1,4 +1,4 @@
-import {  Comment } from "@/app/types/page";
+import {  Comment } from "@/app/types";
 
 const PUBLIC_URL = `${process.env.NEXT_PUBLIC_API_URL}/products`
 

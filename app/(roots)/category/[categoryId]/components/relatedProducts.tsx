@@ -2,7 +2,7 @@
 
 import { getProducts } from "@/actions/getProducts"
 import Product from "@/app/customComponents/product"
-import { Product as ProductTypes} from "@/app/types/page"
+import { Product as ProductTypes} from "@/app/types"
 import { Separator } from "@/components/ui/separator"
 import { useEffect, useState } from "react"
 

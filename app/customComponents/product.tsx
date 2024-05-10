@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from "react"
-import { Product as productType } from "../types/page"
+import { Product as productType } from "../types"
 import Container from "./container"
 import ProductCard from "./productCard"
 import useCartStore from "../hooks/useCart"

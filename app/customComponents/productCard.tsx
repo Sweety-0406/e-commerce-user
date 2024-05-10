@@ -1,6 +1,6 @@
 'use client'
 import { Separator } from "@/components/ui/separator"
-import { Product } from "../types/page"
+import { Product } from "../types"
 import { IndianRupee } from "lucide-react"
 import { Expand } from 'lucide-react'
 import { ShoppingBag } from 'lucide-react';

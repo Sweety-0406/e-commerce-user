@@ -11,7 +11,7 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs"
-import { Product } from "../types/page"
+import { Product } from "../types"
 import { Separator } from "@/components/ui/separator"
 import { Button } from "@/components/ui/button"
 import { BsBagCheck } from "react-icons/bs"

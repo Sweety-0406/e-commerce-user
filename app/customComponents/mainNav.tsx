@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
-import { Category } from "../types/page";
+import { Category } from "../types";
 
 import { revalidate } from "@/app/(roots)/page"
 

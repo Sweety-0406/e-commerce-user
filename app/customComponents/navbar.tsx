@@ -5,7 +5,7 @@ import Container from "./container"
 import MainNav from "./mainNav"
 import CartBar from "./cartBar";
 import { revalidate } from "../(roots)/page";
-import { Category } from "../types/page";
+import { Category } from "../types";
 import { useEffect, useState } from "react";
 import { BsFillSuitHeartFill } from "react-icons/bs";
 import { useRouter } from "next/navigation";

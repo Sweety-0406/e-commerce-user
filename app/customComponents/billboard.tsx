@@ -1,6 +1,6 @@
 'use client'
 
-import { Billboard as BillboardType } from "../types/page";
+import { Billboard as BillboardType } from "../types";
 
 
 interface billboardProps{
