@@ -52,8 +52,8 @@ const CartProducts = ()=>{
                         <img src="empty-cart.png" alt="image"/>
                     </div>
                     <div className="my-auto">
-                        <p className="">Your Cart Is Empty</p>
-                        <p className="text-gray-500 text-sm">Looks like you haven't added anything to your cart yet !</p>
+                        <p>Your Cart Is Empty</p>
+                        <p className="text-gray-500 text-sm">Looks like you have not added anything to your cart yet !</p>
                         <Button className="mt-4" onClick={()=>router.push('/')}>Go to home</Button>
                     </div>
                 </div>
