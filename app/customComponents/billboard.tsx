@@ -7,6 +7,7 @@ interface billboardProps{
     billboardData : BillboardType
 }
 
+
 const Billboard:React.FC<billboardProps> = ({
     billboardData
 })=>{
