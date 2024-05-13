@@ -15,7 +15,7 @@ const LoginNavbar = ()=>{
             <div className="flex justify-between my-4 mx-3">
                 <div className="ml-2">
                     <Button variant={"ghost"} className="rounded-full  w-10 h-10">
-                        <UserButton afterSignOutUrl="/"/>
+                        <UserButton/>
                     </Button>
                 </div>
                 <div className="flex space-x-3">

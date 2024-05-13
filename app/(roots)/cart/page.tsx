@@ -6,9 +6,9 @@ const CartPage= async ()=>{
     return(
         <Container>
             <div className="font-bold pt-44 text-2xl mb-4">Your Carts Products</div>
-            <Suspense fallback={<div>Loading...</div>}>
+            {/* <Suspense fallback={<div>Loading...</div>}> */}
                 <CartProducts />
-            </Suspense>
+            {/* </Suspense> */}
         </Container>
     )
 }

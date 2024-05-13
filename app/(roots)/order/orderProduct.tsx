@@ -7,16 +7,21 @@ import Container from "@/app/customComponents/container";
 import { useAuth } from "@clerk/nextjs";
 import toast from "react-hot-toast";
 
-interface OrderProductProps {}
+interface OrderProductProps {
+    orderId:string
+}
 
-const OrderProduct: React.FC<OrderProductProps> = () => {
+const OrderProduct: React.FC<OrderProductProps> = ({
+    orderId
+}) => {
     const [orderItem, setOrderItem] = useState([]);
-    const { userId: orderId } = useAuth();
+    // const { userId: orderId } = useAuth();
+
     const router = useRouter();
 
     const fetchOrders = async () => {
         try {
-            const fetchedOrders = await getOrders(orderId!); // Notice the "!" to assert non-nullability
+            const fetchedOrders = await getOrders(orderId); // Notice the "!" to assert non-nullability
             setOrderItem(fetchedOrders);
             router.refresh();
         } catch (error) {
@@ -28,20 +33,20 @@ const OrderProduct: React.FC<OrderProductProps> = () => {
         if (orderId) {
             fetchOrders();
         }
-    }, [orderId, setOrderItem, router]);
+    }, [orderId]);
 
-    if (!orderId) {
-        return (
-            <Container>
-                {toast.success("You are not signed in.")}
-            </Container>
-        );
-    }
+    // if (!orderId) {
+    //     return (
+    //         <Container>
+    //             {toast.success("You are not signed in.")}
+    //         </Container>
+    //     );
+    // }
 
     if (orderItem.length === 0) {
         return (
             <Container>
-                <div className="pt-40">
+                <div>
                     <div className="flex flex-col md:flex-row justify-center text-center md:mt-7 text-xl font-semibold">
                         <div className="w-auto h-auto flex justify-center">
                             <img src="no-order.png" alt="image" />
@@ -56,7 +61,7 @@ const OrderProduct: React.FC<OrderProductProps> = () => {
         );
     }
 
-    return <div>orders</div>;
+    return <div className="mt-44">orders</div>;
 };
 
 export default OrderProduct;
