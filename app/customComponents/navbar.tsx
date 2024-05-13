@@ -9,6 +9,7 @@ import { Category } from "../types";
 import { useEffect, useState } from "react";
 import { BsFillSuitHeartFill } from "react-icons/bs";
 import { useRouter } from "next/navigation";
+import Orders from "./order";
 
 revalidate
 
@@ -26,11 +27,12 @@ const Navbar=  ()=>{
             }
         }
         fetchCategory();
+        console.log(categoryData)
     },[])
     return(
-        <div>
+        <div className="sticky">
             <Container >
-                <div className="py-4 ml-4 flex justify-between ">
+                <div className="py-4 ml-2  flex justify-between ">
                     <div className="flex gap-7 mt-3">
                         <div className="text-black text-2xl font-bold">
                         <Link href='/'>
@@ -41,15 +43,8 @@ const Navbar=  ()=>{
                             <MainNav data={categoryData} />
                         </div>
                     </div>
-                    <div className="flex space-x-3">
-                        <BsFillSuitHeartFill 
-                        fill="red" 
-                        size={28} 
-                        className="mt-[6px] cursor-pointer"
-                        onClick={()=>router.push('/favourites')}
-                        />
-                        <CartBar />
-                    </div>
+                    
+                    <Orders />
                 </div>
                 
             </Container>

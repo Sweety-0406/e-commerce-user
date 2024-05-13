@@ -9,11 +9,15 @@ import { Button } from "@/components/ui/button"
 import axios from "axios"
 import { useRouter, useSearchParams } from "next/navigation"
 import toast from "react-hot-toast"
+import { useAuth } from "@clerk/nextjs"
 
-const CartProducts = ()=>{
+
+
+const CartProducts= ()=>{
     const searchParams = useSearchParams()
     const {carts,removeAll} = useCartStore()
     const router = useRouter()
+    const {userId} = useAuth();
 
     useEffect(()=>{
         if(searchParams.get("success")){
@@ -38,9 +42,13 @@ const CartProducts = ()=>{
     },[carts])
 
     const checkoutHandler = async ()=>{
-       const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/checkout`,{
-        productIds: carts.map((item)=>item.id)
-       })
+        console.log(userId)
+        console.log(carts)
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/checkout`,{
+            productIds: carts.map((item)=>item.id),
+            userId
+        })
+       console.log(response)
        window.location = response.data.url;
     }
     return(

@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+ body{
+   position: relative;
+ }
 
   @layer base {
     :root {

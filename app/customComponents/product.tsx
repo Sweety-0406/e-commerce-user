@@ -1,19 +1,21 @@
 'use client'
 
 import { useEffect, useState } from "react"
-import { Product as productType } from "../types"
+import { User, Product as productType } from "../types"
 import Container from "./container"
 import ProductCard from "./productCard"
 import useCartStore from "../hooks/useCart"
 
 interface productProps{
     data: productType[]
-    isFeatured?: boolean
+    isFeatured?: boolean,
+    // user: User | null
 }
 
 const Product:React.FC<productProps> = ({
     data,
-    isFeatured
+    isFeatured,
+    // user
 })=>{
     return(
         <Container>
@@ -37,6 +39,8 @@ const Product:React.FC<productProps> = ({
         </Container>
     )
 }
+
+
 
 
 export default Product

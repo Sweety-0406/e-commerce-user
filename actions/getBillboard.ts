@@ -13,6 +13,6 @@ export const getBillboard = async (id: string) => {
         return await res.json();
     } catch (error) {
         console.error('Error fetching billboard:', error);
-        throw error; // Rethrow the error to be handled by the caller
+        throw error;
     }
 };

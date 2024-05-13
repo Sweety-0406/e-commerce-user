@@ -1,6 +1,6 @@
 'use client'
 import { Separator } from "@/components/ui/separator"
-import { Product } from "../types"
+import { Product, User } from "../types"
 import { IndianRupee } from "lucide-react"
 import { Expand } from 'lucide-react'
 import { ShoppingBag } from 'lucide-react';
@@ -17,19 +17,23 @@ import { useEffect, useState } from "react"
 import ExpendCard from "./expendCard"
 import toast from "react-hot-toast"
 import useFavouriteStore from "../hooks/useFavourite"
+import { useAuth } from "@clerk/nextjs"
 
 interface productCardProps{
-    data:Product
+    data:Product,
+    // user: User | null
 }
 
 const ProductCard:React.FC<productCardProps> = ({
-    data
+    data,
+    // user
 })=>{
     const[isOpen,setIsOpen] = useState(false)
     const cart = useCartStore();
     const favItem = useFavouriteStore();
     const[isFavourite,setIsFavourite] = useState(false)
     const router = useRouter()
+    const {userId} = useAuth()
 
     useEffect(()=>{
         const isPresent = favItem.items.find((item)=>item.id === data.id)
@@ -50,6 +54,11 @@ const ProductCard:React.FC<productCardProps> = ({
     }
 
     const favoriteHandler = (data:Product) => {
+        if(!userId){
+            setIsFavourite(false);
+            toast.success("You are not login. Please login!")
+            return;
+        }
         if(isFavourite){
             setIsFavourite(false);
             favItem.removeItem(data.id);

@@ -1,4 +1,13 @@
 
+export type User = {
+    id: string,
+    firstName :string | null,
+    lastName :string | null,
+    fullName :string | null,
+    username :string | null,
+    imageUrl: string
+}
+
 export type Billboard = {
     id: string,
     label: string,
