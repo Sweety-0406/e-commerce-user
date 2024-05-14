@@ -28,7 +28,7 @@ const Navbar=  ()=>{
         }
         fetchCategory();
         console.log(categoryData)
-    })
+    },[])
     return(
         <div className="sticky">
             <Container >

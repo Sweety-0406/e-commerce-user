@@ -27,7 +27,7 @@ const OrderedItem:React.FC<orderItemsProps> = ({
         <div>
             <OrderExpandCard onChange={onChange} isOpen={isOpen} data={orderItem} />
             <div className="flex gap-2 m-1">
-                {orderItem.length <2 ?
+                {orderItem.length <3 ?
                  (
                     orderItem.map((item,index)=>(
                         <img
