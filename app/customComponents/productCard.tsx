@@ -21,12 +21,10 @@ import { useAuth } from "@clerk/nextjs"
 
 interface productCardProps{
     data:Product,
-    // user: User | null
 }
 
 const ProductCard:React.FC<productCardProps> = ({
     data,
-    // user
 })=>{
     const[isOpen,setIsOpen] = useState(false)
     const cart = useCartStore();

@@ -6,8 +6,8 @@ import { SignInButton, SignedOut } from "@clerk/nextjs";
 
 
 const OrderPage = async()=>{
-    const {userId} = auth(); 
-    if(!userId){
+    const user = auth(); 
+    if(!user.userId){
         return(
             <Container>
                 <div className="pt-40">
@@ -28,7 +28,7 @@ const OrderPage = async()=>{
     return (
         <Container>
             <div className="font-bold text-2xl pt-44 mb-4">My Orders </div>
-            <OrderProduct orderId={userId}/>
+            <OrderProduct orderId={user.userId}/>
         </Container>
     )
 }

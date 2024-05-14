@@ -2,10 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { getOrders } from "@/actions/getOrder";
-import { useRouter } from "next/navigation";
 import Container from "@/app/customComponents/container";
-import { useAuth } from "@clerk/nextjs";
-import toast from "react-hot-toast";
+import { Button } from "@/components/ui/button";
+import OrderedItem from "./orderedItem";
+import { Order, Product } from "@/app/types";
+import OrderExpandCard from "./orderExpandCard";
 
 interface OrderProductProps {
     orderId:string
@@ -14,35 +15,27 @@ interface OrderProductProps {
 const OrderProduct: React.FC<OrderProductProps> = ({
     orderId
 }) => {
-    const [orderItem, setOrderItem] = useState([]);
-    // const { userId: orderId } = useAuth();
-
-    const router = useRouter();
-
-    const fetchOrders = async () => {
-        try {
-            const fetchedOrders = await getOrders(orderId); // Notice the "!" to assert non-nullability
-            setOrderItem(fetchedOrders);
-            router.refresh();
-        } catch (error) {
-            console.error('Error fetching orders:', error);
-        }
-    };
-
+    const [orderItem, setOrderItem] = useState<Order[]>([]);
+    
     useEffect(() => {
+        const fetchOrders = async () => {
+            try {
+                const fetchedOrders = await getOrders(orderId);
+                setOrderItem(fetchedOrders);
+                
+            } catch (error) {
+                console.error('Error fetching orders:', error);
+            }
+        };
         if (orderId) {
             fetchOrders();
         }
     }, [orderId]);
 
-    // if (!orderId) {
-    //     return (
-    //         <Container>
-    //             {toast.success("You are not signed in.")}
-    //         </Container>
-    //     );
-    // }
-
+    const onClick = ()=>{
+        // console.log("hii h")
+        console.log(orderItem)
+    }
     if (orderItem.length === 0) {
         return (
             <Container>
@@ -61,7 +54,31 @@ const OrderProduct: React.FC<OrderProductProps> = ({
         );
     }
 
-    return <div className="mt-44">orders</div>;
+
+    return (
+        <div className="mt-4">
+            {orderItem.map((item,index)=>(
+                <div
+                    key={index}
+                    className="    
+                    grid
+                    grid-cols-5
+                    border-[1px]
+                    mt-1
+                    border-black
+                    rounded-lg
+                ">
+                    <div className="col-span-5 sm:col-span-3 sm:border-r-[1px] m-1 border-black">
+                        <OrderedItem orderItem={item.orderItem} />
+                    </div>
+                    <div className="col-span-2 mt-4 ml-2 mb-2">
+                        <p className="text-slate-600"> <span className="text-black text-lg font-semibold">Address: </span>{item.address}</p>
+                        <p className="text-slate-600"> <span className="text-black text-lg font-semibold">Phone No. : </span>{item.phone}</p>
+                    </div>
+                </div>
+            ))}
+        </div>
+    )
 };
 
 export default OrderProduct;

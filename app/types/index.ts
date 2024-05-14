@@ -60,3 +60,19 @@ export type Comment={
     content: string,
     productId: string
 }
+
+export type OrderItem={
+    id:string,
+    orderId:string,
+    product:Product
+}
+
+export type Order={
+    id:string,
+    userId: string,
+    phone: string,
+    address:string,
+    isPaid:string,
+    storeId:string,
+    orderItem: OrderItem[]
+}
