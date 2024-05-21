@@ -12,12 +12,17 @@ import toast from "react-hot-toast"
 import { useAuth } from "@clerk/nextjs"
 
 
+interface cartProductsProps{
+    userId:string 
+}
 
-const CartProducts= ()=>{
+const CartProducts:React.FC<cartProductsProps>= ({
+    userId
+})=>{
     const searchParams = useSearchParams()
     const {carts,removeAll} = useCartStore()
     const router = useRouter()
-    const {userId} = useAuth();
+    // const {userId} = useAuth();
 
     useEffect(()=>{
         if(searchParams.get("success")){

@@ -48,13 +48,13 @@ export default async function RootLayout({
       <html lang="en">
         <body className={inter.className}>
           <Toaster />
-          <header className="fixed z-50 w-[100%] bg-slate-50">
+          {/* <header className="fixed z-50 w-[100%] bg-slate-50">
             <LoginNavbar />
             <Navbar />
             <Separator className=" border-[1px] border-black"/>
-          </header>  
+          </header>   */}
           <main>{children}</main>
-          <Footer />
+          {/* <Footer /> */}
         </body>
       </html>
     </ClerkProvider>
