@@ -9,9 +9,9 @@ import {
   TabsTrigger,
 } from "@/components/ui/tabs"
 
-import { revalidate } from "@/app/(roots)/page"
+// import { revalidate } from "@/app/(roots)/page"
 
-revalidate ;
+// revalidate ;
 
 interface galleryProps{
     images:Image[],
