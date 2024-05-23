@@ -4,9 +4,9 @@ import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
 import { Category } from "../types";
 
-import { revalidate } from "@/app/(roots)/page"
+// import { revalidate } from "@/app/(roots)/page"
 
-revalidate ;
+// revalidate ;
 
 interface mainNavProps{
     data: Category[]

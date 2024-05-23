@@ -3,10 +3,10 @@ import { getIndividualProduct } from "@/actions/getIndividualProduct"
 import { getProducts } from "@/actions/getProducts"
 import MainProduct from "./components/MainProduct"
 import ProductCard from "@/app/customComponents/productCard"
-import { revalidate } from "@/app/(roots)/page"
+// import { revalidate } from "@/app/(roots)/page"
 import Container from "@/app/customComponents/container"
 
-revalidate ;
+// revalidate ;
 
 interface productPageProps{
     params: {productId: string}

@@ -8,7 +8,7 @@ import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
 
-export const revalidate = 0;
+// export const revalidate = 0;
 
 export default async function Home() {
   const billboardData = await getBillboard("463167cb-3673-43c0-8c4f-03d3774138ec")

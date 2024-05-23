@@ -13,6 +13,7 @@ export default async function DashboardLayout({
 }) {
     const {userId} = auth()
     if(!userId){
+        console.log("problem is there...")
         redirect('/sign-in')
     }
 
