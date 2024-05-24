@@ -3,10 +3,8 @@
 import { useEffect, useState } from "react";
 import { getOrders } from "@/actions/getOrder";
 import Container from "@/app/customComponents/container";
-import { Button } from "@/components/ui/button";
 import OrderedItem from "./orderedItem";
-import { Order, Product } from "@/app/types";
-import OrderExpandCard from "./orderExpandCard";
+import { Order } from "@/app/types";
 
 interface OrderProductProps {
     orderId:string
@@ -32,10 +30,7 @@ const OrderProduct: React.FC<OrderProductProps> = ({
         }
     }, [orderId]);
 
-    const onClick = ()=>{
-        // console.log("hii h")
-        console.log(orderItem)
-    }
+
     if (orderItem.length === 0) {
         return (
             <Container>

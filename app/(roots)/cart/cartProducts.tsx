@@ -47,13 +47,10 @@ const CartProducts:React.FC<cartProductsProps>= ({
     },[carts])
 
     const checkoutHandler = async ()=>{
-        console.log(userId)
-        console.log(carts)
         const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/checkout`,{
             productIds: carts.map((item)=>item.id),
             userId
         })
-       console.log(response)
        window.location = response.data.url;
     }
     return(

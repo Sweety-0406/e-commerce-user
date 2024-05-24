@@ -117,11 +117,11 @@ const Filter:React.FC<filtersProps> = ({
                                     name="color"
                                     render={({ field }) => (
                                         <FormItem>
-                                            <FormLabel>Size</FormLabel>
+                                            <FormLabel>Color</FormLabel>
                                             <Select onValueChange={field.onChange} defaultValue={field.value}>
                                                 <FormControl>
                                                 <SelectTrigger>
-                                                <SelectValue placeholder="Select a size " />
+                                                <SelectValue placeholder="Select a color " />
                                                 </SelectTrigger>
                                                 </FormControl>
                                                 <SelectContent className={`${colors.length >5 ? "h-48":"h-auto"}`}>
