@@ -9,7 +9,7 @@ const CartPage= async ()=>{
     const userIdString: string = userId || "";
     return(
         <Container>
-            <div className="font-bold pt-44 text-2xl mb-4">Your Carts Products</div>
+            <div className="font-bold pt-28 text-2xl mb-4">Your Carts Products</div>
             {/* <Suspense fallback={<div>Loading...</div>}> */}
                 <CartProducts userId = {userIdString}/>
             {/* </Suspense> */}
