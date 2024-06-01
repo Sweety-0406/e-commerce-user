@@ -12,17 +12,11 @@ import toast from "react-hot-toast"
 import { useAuth } from "@clerk/nextjs"
 
 
-interface cartProductsProps{
-    userId:string 
-}
 
-const CartProducts:React.FC<cartProductsProps>= ({
-    userId
-})=>{
+const CartProducts = ()=>{
     const searchParams = useSearchParams()
     const {carts,removeAll} = useCartStore()
     const router = useRouter()
-    // const {userId} = useAuth();
 
     useEffect(()=>{
         if(searchParams.get("success")){
@@ -49,7 +43,7 @@ const CartProducts:React.FC<cartProductsProps>= ({
     const checkoutHandler = async ()=>{
         const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/checkout`,{
             productIds: carts.map((item)=>item.id),
-            userId
+            userId: Math.random()
         })
        window.location = response.data.url;
     }

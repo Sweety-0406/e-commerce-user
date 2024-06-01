@@ -1,15 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Footer from "./customComponents/footer";
-import Navbar from "./customComponents/navbar";
 // import { revalidate } from "./(roots)/page";
 import { Toaster } from "react-hot-toast";
-import { Separator } from "@/components/ui/separator";
 import { ClerkProvider } from '@clerk/nextjs'
-import LoginNavbar from "./customComponents/loginNav";
-import { auth, currentUser } from '@clerk/nextjs/server';
-import { redirect } from "next/navigation";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -26,7 +20,6 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const user = await currentUser();
 
   return (
     <ClerkProvider>

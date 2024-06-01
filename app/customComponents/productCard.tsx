@@ -52,11 +52,11 @@ const ProductCard:React.FC<productCardProps> = ({
     }
 
     const favoriteHandler = (data:Product) => {
-        if(!userId){
-            setIsFavourite(false);
-            toast.success("You are not login. Please login!")
-            return;
-        }
+        // if(!userId){
+        //     setIsFavourite(false);
+        //     toast.success("You are not login. Please login!")
+        //     return;
+        // }
         if(isFavourite){
             setIsFavourite(false);
             favItem.removeItem(data.id);
@@ -141,7 +141,7 @@ const ProductCard:React.FC<productCardProps> = ({
                     </div>
                     <Separator />
                     <div className="ml-2 ">
-                        <div className="text-black text-sm font-semibold" > {data.name} </div>
+                        <div className="text-black text-sm font-semibold truncate" > {data.name} </div>
                         <div className="text-xs  text-gray-700" > {data.category.name} </div>
                         <div className="flex">
                             <IndianRupee size={15} className="mt-1" />

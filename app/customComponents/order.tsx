@@ -17,10 +17,10 @@ const Orders = () =>{
                 onClick={()=>router.push('/favourites')}
             />
             <CartBar />
-            <Button className="rounded-2xl " onClick={()=>router.push('/order')}>
+            {/* <Button className="rounded-2xl " onClick={()=>router.push('/order')}>
                 <HiMiniShoppingBag className="mr-" size={20}/>
                 My orders
-            </Button>
+            </Button> */}
         </div>
     )
 }

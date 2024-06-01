@@ -5,13 +5,11 @@ import { auth } from "@clerk/nextjs/server";
 import toast from "react-hot-toast";
 
 const CartPage= async ()=>{
-    const { userId } = auth();
-    const userIdString: string = userId || "";
     return(
         <Container>
             <div className="font-bold pt-28 text-2xl mb-4">Your Carts Products</div>
             {/* <Suspense fallback={<div>Loading...</div>}> */}
-                <CartProducts userId = {userIdString}/>
+                <CartProducts />
             {/* </Suspense> */}
         </Container>
     )
