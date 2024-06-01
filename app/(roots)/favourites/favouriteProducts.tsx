@@ -11,7 +11,7 @@ const FavouriteProducts = () =>{
 
     if(favItem.items.length === 0 ){
         return(
-            <div className="flex flex-col md:flex-row justify-center text-center mt-20 md:mt-28 text-xl font-semibold">
+            <div className="flex flex-col md:flex-row justify-center text-center mt-16 md:mt-24 text-xl font-semibold">
                 <div className="w-auto h-auto flex justify-center">
                     <img src="empty-fav-items.png" alt="image"/>
                 </div>

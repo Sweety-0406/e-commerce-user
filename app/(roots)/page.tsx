@@ -14,9 +14,9 @@ export default async function Home() {
   const billboardData = await getBillboard("463167cb-3673-43c0-8c4f-03d3774138ec")
   const productData = await getProducts({isFeatured: true})
   const {userId} = auth(); 
-  // if(!userId){
-  //   redirect('/sign-up');
-  // }
+  if(!userId){
+    redirect('/sign-up');
+  }
   return (
      <Container>
       <div>
