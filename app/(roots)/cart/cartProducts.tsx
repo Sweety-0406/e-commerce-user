@@ -43,7 +43,7 @@ const CartProducts = ()=>{
     const checkoutHandler = async ()=>{
         const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/checkout`,{
             productIds: carts.map((item)=>item.id),
-            userId: Math.random()
+            userId: (Math.random()).toString()
         })
        window.location = response.data.url;
     }
