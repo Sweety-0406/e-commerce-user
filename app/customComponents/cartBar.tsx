@@ -22,7 +22,7 @@ const CartBar = ()=>{
     return(
         <div>
             <div className="mr-4 ">
-                <Button className="rounded-2xl" onClick={()=>router.push('/cart')}>
+                <Button className="rounded-2xl " onClick={()=>router.push('/cart')}>
                     <FaCartShopping className="mr-1" size={20}/>
                     {cart.carts.length}
                 </Button>

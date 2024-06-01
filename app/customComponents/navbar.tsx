@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import { BsFillSuitHeartFill } from "react-icons/bs";
 import { useRouter } from "next/navigation";
 import Orders from "./order";
+import LoginNavbar from "./loginNav";
 
 // revalidate
 
@@ -39,7 +40,7 @@ const Navbar=  ()=>{
                             Store
                         </Link>
                         </div>
-                        <div>
+                        <div>  
                             <MainNav data={categoryData} />
                         </div>
                     </div>

@@ -13,11 +13,11 @@ const LoginNavbar = ()=>{
     return(
         <div>
             <div className="flex justify-between my-4 mx-3">
-                <div className="ml-2">
+                {/* <div className="ml-2">
                     <Button variant={"ghost"} className="rounded-full  w-10 h-10">
                         <UserButton/>
                     </Button>
-                </div>
+                </div> */}
                 <div className="flex space-x-3">
                     <BsFillSuitHeartFill 
                     fill="red" 

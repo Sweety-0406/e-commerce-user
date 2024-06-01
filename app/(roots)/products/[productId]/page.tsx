@@ -18,7 +18,7 @@ const ProductPage:React.FC<productPageProps> = async ({params}) => {
     console.log(relatedProducts)
     return(
         <Container>
-            <div className="pt-44">
+            <div className="pt-24">
                 <MainProduct data={product}/>
                 <Separator className="mt-14"/>
             </div>

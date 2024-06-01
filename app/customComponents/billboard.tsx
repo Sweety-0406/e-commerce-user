@@ -12,7 +12,7 @@ const Billboard:React.FC<billboardProps> = ({
     billboardData
 })=>{
     return (
-        <div className=" pt-40 pb-8">
+        <div className=" pt-28 pb-8">
             <div className="mx-auto
                text-center 
                rounded-2xl
@@ -23,7 +23,7 @@ const Billboard:React.FC<billboardProps> = ({
                border-black
                ">
                 <div className="mx-auto
-                  w- 
+                  w- full
                   h-full
                   bg-no-repeat
                   md:h-80

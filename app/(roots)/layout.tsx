@@ -11,15 +11,15 @@ export default async function DashboardLayout({
 }:{
     children:React.ReactNode,
 }) {
-    // const {userId} = auth()
-    // if(!userId){
-    //     redirect('/sign-in')
-    // }
+    const {userId} = auth()
+    if(!userId){
+        redirect('/sign-in')
+    }
 
     return(
         <div>
             <header className="fixed z-50 w-[100%] bg-slate-50">
-                <LoginNavbar />
+                {/* <LoginNavbar /> */}
                 <Navbar />
                 <Separator className=" border-[1px] border-black"/>
             </header>
